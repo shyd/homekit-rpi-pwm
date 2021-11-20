@@ -2,7 +2,7 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.202.5/containers/typescript-node
 {
 	"name": "Node.js & TypeScript",
-	"runArgs": ["--init"],
+	"runArgs": ["--init", "--network=host"],
 	"build": {
 		"dockerfile": "Dockerfile",
 		// Update 'VARIANT' to pick a Node version: 16, 14, 12.
