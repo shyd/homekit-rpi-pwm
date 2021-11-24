@@ -1,5 +1,25 @@
-# photoframe-homekit
-Homekit integration to control screen brightness.
+# homekit-rpi-pwm
+Homekit integration to control screen brightness via pwm0 on a Rapsberry Pi between 10..100% at 20kHz.
+
+
+# Docker
+
+```
+version: "3"
+services:
+  homekit:
+    image: shyd/homekit-rpi-pwm
+    restart: unless-stopped
+    volumes:
+      - homekit:/usr/src/app/persist
+      - /sys/class/pwm/pwmchip0:/sys/class/pwm/pwmchip0
+    network_mode: host
+    
+volumes:
+  homekit:
+```
+
+# From the example
 
 Accessory exposing a `Lightbulb` service with `On` and `Brightness` characteristics.  
 The default pairing code is set to `678-90-876` and runs on port `47128`.
