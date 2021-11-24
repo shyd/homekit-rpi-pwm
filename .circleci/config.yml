@@ -36,8 +36,6 @@ jobs:
           name: Build multiarch docker image and push
           command: |
             DOCKER_CLI_EXPERIMENTAL=enabled docker buildx build --platform linux/arm/v7,linux/arm64,linux/amd64 --push -t shyd/homekit-rpi-pwm .
-      - run: docker build -t shyd/homekit-rpi-pwm .
-      - run: docker push shyd/homekit-rpi-pwm
 workflows:
   version: 2
   workflow:
