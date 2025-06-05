@@ -57,7 +57,7 @@ async function fadePwm(current: number) {
 };
 
 function startPwm() {
-  try { writeFileSync(pwmExport, "1"); } catch {}
+  try { writeFileSync(pwmExport, "0"); } catch {}
   writeFileSync(pwmPeriod, period.toString());
   setPwm(100);
   writeFileSync(pwmEnable, "1");
