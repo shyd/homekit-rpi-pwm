@@ -13,7 +13,7 @@ commands:
           name: Check versions
           command: |
             qemu-aarch64-static --version
-            update-binfmts --version 
+            update-binfmts --version
       - run:
           name: Create builder
           command: |
@@ -25,7 +25,7 @@ commands:
 jobs:
   build:
     machine:
-      image: ubuntu-2004:202010-01
+      image: ubuntu-2404:2024.11.1
     steps:
       - setup
       - run:
